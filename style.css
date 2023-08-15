@@ -12,6 +12,15 @@ body {
   flex-direction: column;
 }
 
+.container,
+.containerp,
+.container2,
+.container3 {
+  width: 90%; /* lub inna wartość, którą uważasz za odpowiednią */
+  margin-left: auto;
+  margin-right: auto;
+}
+
 main {
   flex: 1;
 }

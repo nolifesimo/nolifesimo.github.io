@@ -12,23 +12,6 @@ body {
   flex-direction: column;
 }
 
-.container,
-.containerp,
-.container2,
-.container3 {
-  width: 90%; /* lub inna wartość, którą uważasz za odpowiednią */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Dostosowanie dla małych ekranów */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 40px;
-  }
-  /* Inne dostosowania dla małych ekranów */
-}
-
 main {
   flex: 1;
 }

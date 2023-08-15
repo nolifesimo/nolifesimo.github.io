@@ -33,6 +33,10 @@ body {
     padding: 10px; /* Większy padding dla łatwiejszego klikania */
   }
 
+  h3{
+    font-size: 20px
+  }
+  
   p {
     font-size: 10px; /* Mniejsza czcionka dla tekstu */
   }

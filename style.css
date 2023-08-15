@@ -22,7 +22,7 @@ body {
   .containerp,
   .container2,
   .container3 {
-    width: 95%; /* zmniejszenie szerokości kontenerów */
+    width: 95% !important; /* zmniejszenie szerokości kontenerów */
     margin: 0 auto; /* centrowanie */
     padding: 10px; /* mniejszy wewnętrzny padding */
   }

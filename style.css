@@ -12,14 +12,36 @@ body {
   flex-direction: column;
 }
 
-.container,
-.containerp,
-.container2,
-.container3 {
-  width: 90%; /* lub inna wartość, którą uważasz za odpowiednią */
-  margin-left: auto;
-  margin-right: auto;
+/* Dostosowanie dla małych ekranów (telefony) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px; /* zmniejszenie rozmiaru nagłówka */
+  }
+
+  .container,
+  .containerp,
+  .container2,
+  .container3 {
+    width: 95%; /* zmniejszenie szerokości kontenerów */
+    margin: 0 auto; /* centrowanie */
+    padding: 10px; /* mniejszy wewnętrzny padding */
+  }
+
+  button {
+    width: 100%; /* Pełna szerokość kontenera */
+    font-size: 18px; /* Większa czcionka dla lepszej czytelności */
+    padding: 10px; /* Większy padding dla łatwiejszego klikania */
+  }
+
+  p {
+    font-size: 18px; /* Mniejsza czcionka dla tekstu */
+  }
+
+  .container2 {
+    display: none; /* Ukryj ten kontener */
+  }
 }
+
 
 main {
   flex: 1;

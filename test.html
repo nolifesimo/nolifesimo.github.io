@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuroGenius</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Lato|Josefin+Sans&subset=latin,latin-ext"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="icon" href="ng.png" type="image/x-icon" />
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+  <body>
+    <script>
+      let quizInProgress = true;
+
+      window.addEventListener("beforeunload", function (event) {
+        if (quizInProgress) {
+          event.preventDefault();
+          event.returnValue = "";
+          const confirmationMessage = "Czy na pewno chcesz opuścić tę stronę?";
+          return confirmationMessage;
+        }
+      });
+    </script>
+
+    <div id="particles-js"></div>
+
+    <header>
+      <div class="logo-container">
+        <a href="index.html" class="logo-link">
+          <h1>Neuro<span class="colored-word">Genius</span></h1>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="containerp">
+        <p id="question-number">Pytanie</p>
+        <div class="container3">
+          <p id="timer"></p>
+        </div>
+        <br />
+      </div>
+      <div class="container">
+        <div id="quiz">
+          <div class="question-container">
+            <p id="question"></p>
+          </div>
+          <div id="choices" class="button-grid"></div>
+        </div>
+
+        <div id="result" style="display: none">
+          <h3>Zakończono test</h3>
+          <h2 id="title-name">Wprowadź swoje dane</h2>
+          <div id="name-input-container">
+            <label for="first-name">Imię:</label>
+            <input
+              type="text"
+              id="first-name"
+              placeholder="Wpisz swoje imię"
+              required
+            />
+            <br />
+            <label for="last-name">Nazwisko:</label>
+            <input
+              type="text"
+              id="last-name"
+              placeholder="Wpisz swoje nazwisko"
+              required
+            />
+            <br />
+            <button id="continue-button">Dalej</button>
+          </div>
+
+          <a
+            href="https://buy.stripe.com/fZe14s6cjbz54KY8wy"
+            target="_blank"
+            id="result-button"
+            style="display: none"
+          >
+            <button>Poznaj wynik</button>
+          </a>
+          <p id="score"></p>
+          <canvas
+            id="certificateCanvas"
+            class="scaled-image"
+            style="display: none"
+          ></canvas>
+        </div>
+
+        <script src="test.js"></script>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 NeuroGenius</p>
+    </footer>
+    <script type="text/javascript" src="particles.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

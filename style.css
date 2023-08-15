@@ -28,7 +28,7 @@ body {
   }
 
   button {
-    width: 100%; /* Pełna szerokość kontenera */
+    width: 90%; /* Pełna szerokość kontenera */
     font-size: 18px; /* Większa czcionka dla lepszej czytelności */
     padding: 10px; /* Większy padding dla łatwiejszego klikania */
   }

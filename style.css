@@ -33,7 +33,7 @@ body {
     padding: 10px; /* Większy padding dla łatwiejszego klikania */
   }
 
-  .image-question {
+  #question {
     width: 100%; /* Ustal szerokość na 100% */
     max-width: 100%; /* Zapobiegnij przekroczeniu szerokości ekranu */
     height: auto; /* Dostosuj wysokość proporcjonalnie */

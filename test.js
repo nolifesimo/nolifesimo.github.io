@@ -358,25 +358,28 @@ function showResultsSection() {
 const resultButton = document.getElementById("result-button");
 resultButton.addEventListener("click", showCertificate);
 
-function showCertificate() {
-  window.onload = function () {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://buy.stripe.com/fZe14s6cjbz54KY8wy");
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        {
-          const certificateCanvas =
-            document.getElementById("certificateCanvas");
-          certificateCanvas.style.display = "block";
+// Funkcja do odczytu parametrów z URL-a
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return "";
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
 
-          const resultButton = document.getElementById("result-button");
-          resultButton.style.display = "none";
-        }
-      } else {
-        // Wyświetl komunikat o błędzie.
-        alert("Wystąpił błąd podczas pobierania wyniku testu.");
-      }
-    };
-    xhr.send();
-  };
+// Sprawdź, czy płatność zakończyła się sukcesem na podstawie parametru w URL-u
+var paymentSuccess = getParameterByName("payment_success");
+if (paymentSuccess === "true") {
+  showPaymentConfirmation();
+}
+
+// Funkcja do wyświetlenia potwierdzenia płatności
+function showPaymentConfirmation() {
+  const certificateCanvas = document.getElementById("certificateCanvas");
+  certificateCanvas.style.display = "block";
+
+  const resultButton = document.getElementById("result-button");
+  resultButton.style.display = "none";
 }
